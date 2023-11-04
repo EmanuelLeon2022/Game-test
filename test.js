@@ -35,13 +35,13 @@ class enemy{
 
 const mars = new enemy('Mars', 5, 5)
 
-// const retreat = document.querySelector('button')
-// retreat.addEventListener('click',() =>{
-//     // console.log('retreat')
-//     // player1.ugotShot
-//     const result = document.querySelector('event')
-//     result.textContent = "GAME OVER"
-// })
+const retreat = document.querySelector('button')
+retreat.addEventListener('click',() =>{
+    // console.log('retreat')
+    // player1.ugotShot
+    const result = document.querySelector('h1')
+    result.textContent = "GAME OVER"
+})
 
 const Mars = document.querySelector('#mars')
 Mars.addEventListener('click',() =>{
