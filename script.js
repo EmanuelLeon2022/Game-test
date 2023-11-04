@@ -1,3 +1,5 @@
+//This is Josh's code which I used as an example//
+
 // USS Assembly - attacks first
 
 // 6 Aliens - we attack them one at a time
