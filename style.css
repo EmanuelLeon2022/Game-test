@@ -1,73 +1,56 @@
-/* body{
-    background-color: black;
-}
-button{
-    height: 40px;
-    width: 100px;
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-}
-p{
-    color: white;
-} */
 body{
     background-color: rgb(110, 54, 110);
 }
-#mars:hover{
-    animation: trgtlock 1s;
-    border: 2px solid red ;
+#FIGHT{
+    border: 2px solid white;
+    height: 60;
+    width: 120px;
     border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    padding-left: 40px;
+    display: flex;
+    justify-content: center;
 }
-#griffin:hover{
-    animation: trgtlock 1s;
+#FIGHT:hover{
+    animation: trgtlock 1.7s;
     border: 2px solid red ;
     border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    padding-left: 20px;
+    width: 120px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
-#chimera:hover{
-    animation: trgtlock 1s;
-    border: 2px solid red ;
+#RETREAT{
+    border: 2px solid white;
+    height: 60;
+    width: 150px;
     border-radius: 5px;
-    width: 130px;
-    height: 40px;
-    padding-left: 20px;
+    display: flex;
+    justify-content: center;
 }
-#typhon:hover{
-    animation: trgtlock 1s;
+#RETREAT:hover{
+    animation: trgtlock 1.7s;
     border: 2px solid red ;
     border-radius: 5px;
-    width: 100px;
-    height: 40px;
+    width: 150px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
-#serberus:hover{
-    animation: trgtlock 1s;
-    border: 2px solid red ;
-    border-radius: 5px;
-    width: 130px;
-    height: 40px;
-    padding-left: 7px;
-}
-#harpy:hover{
-    animation: trgtlock 1s;
-    border: 2px solid red ;
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    padding-left: 20px;
+#STATUS{
+    height: 80px;
+    width: 150px;
+    border: 2px solid white;
+    border-radius: 10px;
+    
 }
 @keyframes trgtlock{
     0%{
         opacity: 0;
         border-radius: 1px;
+        margin: auto;
     }
     50%{
         border-radius: 2px;
+
     }
     100%{
         opacity: 1;
@@ -109,20 +92,24 @@ body{
     flex-wrap: wrap;
     color: white;
     height: 200px;
-    width: 700 px;
+    width: 100 px;
     border: solid white;
     align-items: center;
     justify-content: center;
     transform: translateY(25px);
 }
 
-.helf{
+#helf{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     padding-left: 10px;
 }
-.helph{
+#helph{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     padding-left: 10px;
+}
+#stats{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
