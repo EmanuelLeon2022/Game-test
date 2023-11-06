@@ -17,7 +17,7 @@ class enemy{
         this.accuracy = acc *(Math.floor(Math.random() * 3) + 6) / 10;
     }
     takeHit(){
-        this.hull--
+        this.hull=-USSA.firepower
     }
 }
 
