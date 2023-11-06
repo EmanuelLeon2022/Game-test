@@ -5,14 +5,10 @@ class pilot {
       this.firepower = 5
       this.accuracy = .7
     }
-    // takeHit(mnm) {
-    //   const hitstat = mnm.bigshot()
-    //   this.hull -= hitstat
-    // }
     takeHit(currentalien) {
-        const hitstat = currentalien.bigshot()
-        this.hull -= hitstat
-      }
+      const hitstat = currentalien.bigshot()
+      this.hull -= hitstat
+    }
     bigshot() {
       return this.firepower * rangedRandom(0.7, 0)
     }
@@ -48,20 +44,21 @@ class pilot {
   
   let count = 0;
   let army = [one, two, three, four, five, six];
-
+  
   let currentalien = army[count]
-  const switcher = () =>{
-    count ++
-    currentalien = aliengroup[count]
-  }
+  //const switcher = () => {
+   // count++
+   // currentalien = aliengroup[count]
+  //}
   function next() {
     if (currentalien.hull >= 1) {
       const ooze = document.querySelector('#tree')
       ooze.textContent = `A wild ${currentalien.name} appears`
       const boo = document.querySelector('#birb')
       boo.textContent = `${currentalien.firepower}`
-    }else if(currentalien.hull<=0){
-        aliengroup[-1]
+    } else if (currentalien.hull <= 0) {    
+      count++
+      currentalien = army[count]
     }
   }
   
@@ -94,15 +91,16 @@ class pilot {
     // if (USSA.hull > 1)...
     const dis = life_status()
     if (dis == 1) {
-      USSA.takeHit(one);
-      one.takeHit();
+      USSA.takeHit(currentalien);
+      currentalien.takeHit();
       const power = document.querySelector('#stats')
       power.textContent = `USS ASSEMBLY ${USSA.hull} HP`
       const foe = document.querySelector('#aliens')
-      foe.textContent = `Alien ${one.hull} HP`
+      foe.textContent = `Alien ${currentalien.hull} HP`
     } else if (dis == 0) {
       const foe = document.querySelector('#aliens')
       foe.textContent = `HAHAHA`
+      
     }
   })
   
