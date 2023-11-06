@@ -59,9 +59,9 @@ body{
     }
 }
 .sky{
-    background-color: black;
+    background-image: url(space.gif);
     height: 250px;
-    width: 800px;
+    width: 520px;
     border: 2.5px dashed white;
     display: flex;
     flex-direction: row;
@@ -71,16 +71,22 @@ body{
 .assembly{
     height: 150px;
     width:  150px;
-    background-color: rgb(22, 22, 238);
+    background-color: rgb(127, 127, 245);
     padding: 10px;
+    border-radius: 10px;
 
 }
 #aliens{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    padding-left: 10px;
+    text-align: center;
     height: 150px;
     width: 150px;
     background-color: rgb(206, 39, 39);
     display: flex;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .aim{
@@ -98,12 +104,25 @@ body{
     justify-content: center;
     transform: translateY(25px);
 }
-#aliens{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-    padding-left: 10px;
-}
 
+#tree{
+    font-family: sans-serif;
+    color: white;
+    height: 40px;
+    width: 200px;
+    background-color: black;    
+    border: 2px solid white;
+    text-align: center;
+}
+#birb{
+    font-family: sans-serif;
+    color: white;
+    height: 40px;
+    width: 200px;
+    background-color: black;    
+    border: 2px solid white;
+    text-align: center;
+}
 #helf{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
