@@ -5,19 +5,16 @@ class pilot {
       this.firepower = 5
       this.accuracy = .7
     }
-    attack(){
-
-    }
     takeHit(){
-        this.hull=-
+        this.hull--
     }
 }
 class enemy{
-    constructor(name, hull, firepower, accuracy){
+    constructor(name, hull, firepower, acc){
         this.name = name
         this.hull = hull
         this.firepower = firepower
-        this.accuracy = (Math.floor(Math.random() * 3) + 6) / 10;
+        this.accuracy = acc *(Math.floor(Math.random() * 3) + 6) / 10;
     }
     takeHit(){
         this.hull--
@@ -25,7 +22,7 @@ class enemy{
 }
 
 //creates the random hull and firepower strengths
-function rangedRandom(min, max) {
+function rangedRandom(max, min) {
     let rand = Math.random()
     return min + rand * (max - min)
   }
@@ -36,52 +33,52 @@ const three = new enemy('Chimera', rangedRandom(6,3), rangedRandom(4,2), .7);
 const four = new enemy('Typhon', rangedRandom(6,3), rangedRandom(4,2), .7);
 const five = new enemy('Serberus', rangedRandom(6,3), rangedRandom(4,2), .7);
 const six = new enemy('Mars', rangedRandom(6,3), rangedRandom(4,2), .7);
-    
+
 const USSA = new pilot('USSA')
 
-let battle = (USSA, currentalien) => {
-    if(USSA.hull >0  && currentalien.hull >0){
-        currentalien.takeHit();
-        if(currentalien.hull <1) {
-            console.log("Target Destroyed")
-            count++
-            currentalien = aliengroup [count];
-            console.log(currentalien.name)
-        }else {
-            USSA.takeHit
-        }
-    }
-}
+// let battle = (USSA, currentalien) => {
+//     if(USSA.hull >0  && currentalien.hull >0){
+//         currentalien.takeHit();
+//         if(currentalien.hull <1) {
+//             console.log("Target Destroyed")
+//             count++
+//             currentalien = aliengroup [count];
+//             console.log(currentalien.name)
+//         }else {
+//             USSA.takeHit()
+//         }
+//     }
+// }
 
 
 
-const switchalienpic = () => {
-    let holder = -1
-    let pics =[
-        "alien1.png",
-        "alien2.gif",
-        "alien3.gif",
-        "alien4.gif",
-        "alien5.png",
-        "alien6.gif"
-    ];
-    holder += 1;
-    let ufo = document.querySelector('#bu')
-    ufo.setAttribute("src", pics[holder]);
-}
+// const switchalienpic = () => {
+//     let holder = -1
+//     let pics =[
+//         "alien1.png",
+//         "alien2.gif",
+//         "alien3.gif",
+//         "alien4.gif",
+//         "alien5.png",
+//         "alien6.gif"
+//     ];
+//     holder += 1;
+//     let ufo = document.querySelector('#bu')
+//     ufo.setAttribute("src", pics[holder]);
+// }
 
-let count = 0;
-let aliengroup = [one, two, three, four, five, six];
-let currentalien = aliengroup[count]
-const switchalien= () =>{
-    count++
-    currentalien= aliengroup[count]
-}
-function switchalien(){
-if (currentalien.hull <=0){
-    switchalien()++;
-}
-}
+// let count = 0;
+// let aliengroup = [one, two, three, four, five, six];
+// let currentalien = aliengroup[count]
+// const switchalien= () =>{
+//     count++
+//     currentalien= aliengroup[count]
+// }
+// function switchalien(){
+// if (currentalien.hull <=0){
+//     switchalien()++;
+// }
+// }
 
 function life(){
 if(USSA.hull>=1){
@@ -97,12 +94,11 @@ if(USSA.hull>=1){
 const FIGHT = document.querySelector('#FIGHT')
 FIGHT.addEventListener('click', () => {
     USSA.takeHit();
-    currentalien.takeHit();
-    life();
+    one.takeHit();
     const power =document.querySelector('#stats')
     power.textContent = `USSA ${USSA.hull} HP`
     const foe =document.querySelector('#aliens')
-    foe.textContent = `Alien ${currentalien.hull} HP`
+    foe.textContent = `Alien ${one.hull} HP`
 })
 
 const RETREAT = document.querySelector('#RETREAT')
