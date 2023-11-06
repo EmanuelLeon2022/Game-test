@@ -6,7 +6,7 @@ class pilot {
       this.accuracy = .7
     }
     takeHit(){
-        this.hull--
+        this.hull-enemy.bigshot
     }
 }
 class enemy{
@@ -18,6 +18,9 @@ class enemy{
     }
     takeHit(){
         this.hull=-USSA.firepower
+    }
+    bigshot(){
+        this.accuracy*this.firepower
     }
 }
 
@@ -84,21 +87,29 @@ function life(){
 if(USSA.hull>=1){
     const life = document.querySelector('#STATUS')
     life.textContent =`KEEP FIGHTING`
+    return 1
     }else if(USSA.hull<=1){
         const life = document.querySelector('#STATUS')
         life.textContent =`YOU DIED`
+        return 0
     }
 }
 
 //FIGHT BUTTON
 const FIGHT = document.querySelector('#FIGHT')
 FIGHT.addEventListener('click', () => {
-    USSA.takeHit();
-    one.takeHit();
-    const power =document.querySelector('#stats')
-    power.textContent = `USSA ${USSA.hull} HP`
-    const foe =document.querySelector('#aliens')
-    foe.textContent = `Alien ${one.hull} HP`
+    const dis = life()
+    if (dis ===1){
+        USSA.takeHit();
+        one.takeHit();
+        const power =document.querySelector('#stats')
+        power.textContent = `USSA ${USSA.hull} HP`
+        const foe =document.querySelector('#aliens')
+        foe.textContent = `Alien ${one.hull} HP`
+    } else if (dis === 0){
+        const foe =document.querySelector('#aliens')
+        foe.textContent = `YAHAHA`
+    }
 })
 
 const RETREAT = document.querySelector('#RETREAT')
